@@ -23,8 +23,16 @@
 #' soma(x = x, y = y)
 #'
 #' @export
-stopword <- function ()
+replace <- function ()
     {
-        sp <- read.table("https://www.ufrgs.br/tesauros/index.php/thesa/terms_from_to/69/csv",sep=";")
-        as.character(sp[,1])
+        sp <- read.table("https://www.ufrgs.br/tesauros/index.php/thesa/terms_from_to/64/csv",sep=";")
+        sp[,2] <- str_replace_all(sp[,2],' ','_')
+        sp[,1] <- tolower(sp[,1])
+        sp
+        #sp1 <- tolower(sp[,1])
+        #sp2 <- tolower(sp[,2])
+        #sa <- c(sp1,sp2)
+        #sa
+        #sp <- as.character(sp[,1])
+        #tolower(sp);
     }
